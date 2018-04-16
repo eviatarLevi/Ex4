@@ -3,6 +3,11 @@
         "ostream": "cpp",
         "limits": "cpp",
         "iostream": "cpp",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "xiosbase": "cpp",
+        "xlocale": "cpp",
+        "system_error": "cpp",
+        "xstring": "cpp",
+        "string": "cpp"
     }
 }
