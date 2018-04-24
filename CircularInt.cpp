@@ -1,5 +1,5 @@
 #include "CircularInt.hpp"
-#include <string>
+
 CircularInt::CircularInt(int minVal, int maxVal) : min(minVal), max(maxVal), h(minVal)
 {
 

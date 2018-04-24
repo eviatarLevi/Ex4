@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <string>
 using namespace std;
 class CircularInt{
     private:
@@ -14,12 +15,12 @@ class CircularInt{
         CircularInt& operator-= (const int num);
         CircularInt& operator*= (const int num);
         CircularInt& operator/= (const int num);
-       // CircularInt& operator- (const int num,const CircularInt& t );
         friend ostream& operator<< (ostream& out,const CircularInt &c);
         friend CircularInt operator- (const CircularInt& p);
         friend CircularInt operator + ( const CircularInt& t,const int num);
         friend CircularInt operator + (const int num, const CircularInt& t);
         friend CircularInt operator - ( const CircularInt& t,const int num);
+        friend CircularInt operator - ( const CircularInt& t,const CircularInt& t1);
         friend CircularInt operator - (const int num, const CircularInt& t);
         friend CircularInt operator + (const CircularInt& t1, const CircularInt& t2);
         friend CircularInt operator * (const CircularInt& t1, const CircularInt& t2);
@@ -27,11 +28,12 @@ class CircularInt{
         friend CircularInt operator * (const int num,const CircularInt& t1);
         friend CircularInt operator / (const CircularInt& t1, const CircularInt& t2);
         friend CircularInt operator / (const CircularInt& t1, const int num);
+        friend int operator == ( const CircularInt& t,const CircularInt& t1);
+        friend int operator == ( int t,const CircularInt& t1);
+        friend int operator == (const CircularInt& t1, int t);
 };
 inline ostream& operator<< (ostream& out,const CircularInt &c) {
-    out << "[";
     out << c.h;
-    out << "]";
     return out;
 }
 inline CircularInt operator- (const CircularInt& p){
@@ -89,3 +91,24 @@ inline CircularInt operator/ (const CircularInt& t,const int num)
     return ans;
 }
 
+inline CircularInt operator - ( const CircularInt& t,const CircularInt& t1)
+{
+    return t - t1.h;;
+}
+
+inline int operator == ( const CircularInt& t,const CircularInt& t1)
+{
+    if(t.h!=t1.h)
+    return 0;
+    return 1;
+}
+
+inline int operator == ( int t,const CircularInt& t1)
+{
+    if(t!=t1.h)
+    return 0;
+    return 1;
+}
+inline int operator == (const CircularInt& t1, int t){
+    return t==t1;
+}
