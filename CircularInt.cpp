@@ -220,7 +220,7 @@ int operator<=(const CircularInt &t1, const int t)
 }
 CircularInt &CircularInt::operator=(const int num)
 {
-    if(num>this->min&&num<this->max){
+    if(num>=this->min&&num<=this->max){
     this->h = num;
     return *this;}
     string er="Error";
