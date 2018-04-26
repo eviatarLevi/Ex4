@@ -120,7 +120,6 @@ CircularInt operator/(const int num, const CircularInt &t)
 CircularInt operator-(const CircularInt &t, const CircularInt &t1)
 {
     return t - t1.h;
-    ;
 }
 
 int operator==(const CircularInt &t, const CircularInt &t1)
@@ -274,4 +273,17 @@ static istream& getAndCheckNextCharIs(istream& input, char expectedChar) {
         // failbit is for format error
         input.setstate(ios::failbit);
     return input;
+}
+
+CircularInt operator+=(const CircularInt &t1, const CircularInt& t2)
+{
+    CircularInt ans(t1);
+    ans += t2.h;
+    return ans;
+}
+CircularInt operator-=(const CircularInt &t1, const CircularInt& t2)
+{
+    CircularInt ans(t1);
+    ans -= t2.h;
+    return ans;
 }
