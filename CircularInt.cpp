@@ -277,13 +277,17 @@ static istream& getAndCheckNextCharIs(istream& input, char expectedChar) {
 
 CircularInt operator+=(const CircularInt &t1, const CircularInt& t2)
 {
-    CircularInt ans(t1);
-    ans += t2.h;
-    return ans;
+    return t1+t2;
 }
 CircularInt operator-=(const CircularInt &t1, const CircularInt& t2)
 {
-    CircularInt ans(t1);
-    ans -= t2.h;
-    return ans;
+    return t1-t2;
+}
+CircularInt operator*=(const CircularInt &t1, const CircularInt& t2)
+{
+    return t1*t2;
+}
+CircularInt operator/=(const CircularInt &t1, const CircularInt& t2)
+{
+    return t1/t2;
 }

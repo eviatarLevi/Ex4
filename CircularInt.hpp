@@ -53,5 +53,7 @@ class CircularInt
     friend int operator<=(const CircularInt &t1, const int t);
     friend CircularInt operator+=(const CircularInt &t1, const CircularInt& t2);
     friend CircularInt operator-=(const CircularInt &t1, const CircularInt& t2);
+    friend CircularInt operator*=(const CircularInt &t1, const CircularInt &t2);
+    friend CircularInt operator/=(const CircularInt &t1, const CircularInt& t2);
     CircularInt& operator=(const int);
 };
