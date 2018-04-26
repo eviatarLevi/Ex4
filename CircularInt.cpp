@@ -46,5 +46,89 @@ CircularInt& CircularInt::operator/= (const int num){
 }
 
 
+ostream& operator<< (ostream& out,const CircularInt &c) {
+    out << c.h;
+    return out;
+}
+CircularInt operator- (const CircularInt& p){
+    CircularInt ans(p);
+    ans.h = ans.max - ans.h;
+    return ans;
+}
+CircularInt operator+ (const CircularInt& t,const int num)
+{
+    CircularInt ans(t);
+    ans += num;
+    return ans;
+}
+CircularInt operator+ (const int num, const CircularInt& t)
+{
+    return t + num;
+}
+CircularInt operator- (const CircularInt& t,const int num)
+{
+    CircularInt ans(t);
+    ans -= num;
+    return ans;
+}
+CircularInt operator- (const int num, const CircularInt& t)
+{
+    return -(t - num);
+}
+CircularInt operator + (const CircularInt& t1, const CircularInt& t2)
+{
+    return t1+t2.h;
+}
+CircularInt operator * (const CircularInt& t1, const CircularInt& t2)
+{
+    return t1 * t2.h;
+}
+CircularInt operator* (const CircularInt& t,const int num)
+{
+    CircularInt ans(t);
+    ans *= num;
+    return ans;
+}
+CircularInt operator* (const int num, const CircularInt& t)
+{
+    return t * num;
+}
 
+CircularInt operator / (const CircularInt& t1, const CircularInt& t2)
+{
+    return t1/t2.h;
+}
+CircularInt operator/ (const CircularInt& t,const int num)
+{
+    CircularInt ans(t);
+    ans /= num;
+    return ans;
+}
+
+CircularInt operator/ (const int num,const CircularInt& t)
+{
+   return t/num;
+}
+
+CircularInt operator - ( const CircularInt& t,const CircularInt& t1)
+{
+    return t - t1.h;;
+}
+
+int operator == ( const CircularInt& t,const CircularInt& t1)
+{
+    if(t.h!=t1.h)
+    return 0;
+    return 1;
+}
+
+int operator == ( int t,const CircularInt& t1)
+{
+    if(t!=t1.h)
+    return 0;
+    return 1;
+}
+int operator == (const CircularInt& t1, int t){
+    return t==t1;
+}
 
