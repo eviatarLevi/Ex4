@@ -200,43 +200,78 @@ int operator>(const CircularInt &t1, const int t)
 }
 int operator>=(const CircularInt &t, const CircularInt &t1)
 {
-    if (t > t1.h|| t == t1)
+    if (t > t1.h || t == t1)
         return 1;
     return 0;
 }
 
 int operator>=(const int t, const CircularInt &t1)
 {
-    if (t > t1.h||t == t1)
+    if (t > t1.h || t == t1)
         return 1;
     return 0;
 }
 
 int operator>=(const CircularInt &t1, const int t)
 {
-    return (t > t1)||(t == t1);
+    return (t > t1) || (t == t1);
 }
 
 int operator<=(const CircularInt &t, const CircularInt &t1)
 {
-    if (t < t1.h|| t == t1)
+    if (t < t1.h || t == t1)
         return 1;
     return 0;
 }
 
 int operator<=(const int t, const CircularInt &t1)
 {
-    if (t < t1.h||t == t1)
+    if (t < t1.h || t == t1)
         return 1;
     return 0;
 }
 
 int operator<=(const CircularInt &t1, const int t)
 {
-    return (t < t1)||(t == t1);
+    return (t < t1) || (t == t1);
 }
-CircularInt& CircularInt::operator=(const int num)
+CircularInt &CircularInt::operator=(const int num)
 {
-    this->h=num;
+    this->h = num;
     return *this;
+}
+int CircularInt::getmin()
+{
+    return min;
+}
+int CircularInt::getmax()
+{
+    return max;
+}
+istream &operator>>(istream &input, CircularInt &c)
+{
+    // ios::pos_type startPosition = input.tellg();
+
+    // if (!(input >> c.getmin() ) ||
+    //     (!getAndCheckNextCharIs(input, ' ')) ||
+    //     (!(input >> c.getmin())))
+    // {
+    //     // rewind on error
+    //     auto errorState = input.rdstate(); // remember error state
+    //     input.clear();                     // clear error so seekg will work
+    //     input.seekg(startPosition);        // rewind
+    //     input.clear(errorState);           // set back the error flag
+    // }
+    // return input;
+}
+
+static istream& getAndCheckNextCharIs(istream& input, char expectedChar) {
+    char actualChar;
+    input >> actualChar;
+    if (!input) return input;
+
+    if (actualChar!=expectedChar) 
+        // failbit is for format error
+        input.setstate(ios::failbit);
+    return input;
 }

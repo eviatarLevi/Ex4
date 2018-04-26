@@ -17,7 +17,10 @@ class CircularInt
     CircularInt &operator-=(const int num);
     CircularInt &operator*=(const int num);
     CircularInt &operator/=(const int num);
+    int getmin();
+    int getmax();
     friend ostream &operator<<(ostream &out, const CircularInt &c);
+    friend istream &operator>>(istream &in, const CircularInt &c);
     friend CircularInt operator-(const CircularInt &p);
     friend CircularInt operator+(const CircularInt &t, const int num);
     friend CircularInt operator+(const int num, const CircularInt &t);
