@@ -206,12 +206,12 @@ int operator>=(const CircularInt &t1, const int t)
 
 int operator<=(const CircularInt &t, const CircularInt &t1)
 {
-    return (t < t1 || t == t1)
+    return (t < t1 || t == t1);
 }
 
 int operator<=(const int t, const CircularInt &t1)
 {
-   return  (t < t1 || t == t1)
+   return  (t < t1 || t == t1);
 }
 
 int operator<=(const CircularInt &t1, const int t)
