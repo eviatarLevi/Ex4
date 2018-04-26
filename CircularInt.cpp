@@ -162,16 +162,12 @@ int operator!=(const CircularInt &t1, const int t)
 
 int operator<(const CircularInt &t, const CircularInt &t1)
 {
-    if (t.h < t1.h)
-        return 1;
-    return 0;
+    return t.h<t1.h;
 }
 
 int operator<(const int t, const CircularInt &t1)
 {
-    if (t < t1.h)
-        return 1;
-    return 0;
+    return t<t1.h;
 }
 
 int operator<(const CircularInt &t1, const int t)
@@ -181,16 +177,12 @@ int operator<(const CircularInt &t1, const int t)
 
 int operator>(const CircularInt &t, const CircularInt &t1)
 {
-    if (t > t1.h)
-        return 1;
-    return 0;
+   return t1.h>t;
 }
 
 int operator>(const int t, const CircularInt &t1)
 {
-    if (t > t1.h)
-        return 1;
-    return 0;
+    return t>t1.h;
 }
 
 int operator>(const CircularInt &t1, const int t)
@@ -199,16 +191,12 @@ int operator>(const CircularInt &t1, const int t)
 }
 int operator>=(const CircularInt &t, const CircularInt &t1)
 {
-    if (t > t1.h || t == t1)
-        return 1;
-    return 0;
+    return (t>t1)||(t==t1);
 }
 
 int operator>=(const int t, const CircularInt &t1)
 {
-    if (t > t1.h || t == t1)
-        return 1;
-    return 0;
+    return (t > t1 || t == t1);
 }
 
 int operator>=(const CircularInt &t1, const int t)
@@ -218,16 +206,12 @@ int operator>=(const CircularInt &t1, const int t)
 
 int operator<=(const CircularInt &t, const CircularInt &t1)
 {
-    if (t < t1.h || t == t1)
-        return 1;
-    return 0;
+    return (t < t1 || t == t1)
 }
 
 int operator<=(const int t, const CircularInt &t1)
 {
-    if (t < t1.h || t == t1)
-        return 1;
-    return 0;
+   return  (t < t1 || t == t1)
 }
 
 int operator<=(const CircularInt &t1, const int t)
