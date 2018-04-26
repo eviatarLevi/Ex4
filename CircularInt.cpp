@@ -235,3 +235,8 @@ int operator<=(const CircularInt &t1, const int t)
 {
     return (t < t1)||(t == t1);
 }
+CircularInt& CircularInt::operator=(const int num)
+{
+    this->h=num;
+    return *this;
+}
