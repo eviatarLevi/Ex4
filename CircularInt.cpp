@@ -16,16 +16,19 @@ CircularInt &CircularInt::operator+=(const int num)
     h = ((h - min) + (num % t)) % t + min;
     return *this;
 }
+
 CircularInt &CircularInt::operator--(int)
 {
     return (*this -= 1);
 }
+
 CircularInt &CircularInt::operator-=(const int num)
 {
     int t = max - min + 1;
     h = ((h - max) - (num % t)) % t + max;
     return *this;
 }
+
 CircularInt &CircularInt::operator*=(const int num)
 {
     for (int i = 1; i < num; i++)
@@ -34,6 +37,7 @@ CircularInt &CircularInt::operator*=(const int num)
     }
     return *this;
 }
+
 CircularInt &CircularInt::operator/=(const int num)
 {
     CircularInt temp(min, max);
@@ -266,14 +270,35 @@ CircularInt operator+=(const CircularInt &t1, const CircularInt& t2)
 {
     return t1+t2;
 }
+
+CircularInt operator+=(const CircularInt &t1, const int t)
+{
+    return t1+t;
+}
+CircularInt operator+=(const int t , const CircularInt& t1)
+{
+    return t+t1;
+}
+CircularInt operator-=(const CircularInt &t1, const int t)
+{
+    return t1-t;
+}
+
+CircularInt operator-=(const int t , const CircularInt& t1)
+{
+    return t-t1;
+}
+
 CircularInt operator-=(const CircularInt &t1, const CircularInt& t2)
 {
     return t1-t2;
 }
+
 CircularInt operator*=(const CircularInt &t1, const CircularInt& t2)
 {
     return t1*t2;
 }
+
 CircularInt operator/=(const CircularInt &t1, const CircularInt& t2)
 {
     return t1/t2;
