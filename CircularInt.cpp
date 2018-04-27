@@ -35,6 +35,11 @@ CircularInt &CircularInt::operator-=(const int num)
     return *this;
 }
 
+CircularInt &CircularInt::operator-=(const CircularInt& c)
+{
+    return *this-=c.h;
+}
+
 CircularInt &CircularInt::operator*=(const int num)
 {
     for (int i = 1; i < num; i++)

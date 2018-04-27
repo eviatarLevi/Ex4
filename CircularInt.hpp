@@ -15,6 +15,7 @@ public:
   CircularInt& operator+=(const CircularInt& );
   CircularInt &operator--(int);
   CircularInt &operator-=(const int num);
+  CircularInt& operator-=(const CircularInt& );
   CircularInt &operator*=(const int num);
   CircularInt &operator/=(const int num);
   int getmin();
@@ -53,12 +54,6 @@ public:
   friend int operator<=(const CircularInt &t, const CircularInt &t1);
   friend int operator<=(const int t, const CircularInt &t1);
   friend int operator<=(const CircularInt &t1, const int t);
-  // friend CircularInt operator+=(const CircularInt &t1, const CircularInt &t2);
-  // friend CircularInt operator+=(const CircularInt &t1, const int t);
-  // friend CircularInt operator+=(const int t, const CircularInt &t2);
-  friend CircularInt operator-=(const CircularInt &t1, const CircularInt &t2);
-  friend CircularInt operator-=(const CircularInt &t1, const int t);
-  friend CircularInt operator-=(const int t, const CircularInt &t2);
   friend CircularInt operator*=(const CircularInt &t1, const CircularInt &t2);
   friend CircularInt operator/=(const CircularInt &t1, const CircularInt &t2);
   CircularInt &operator=(const int);
@@ -269,40 +264,6 @@ input>>t;
   }
   return input;
 }
-
-// inline CircularInt operator+=(const CircularInt &t, const int num)
-// {
-//   CircularInt ans(t);
-//   ans += num;
-//   return ans;
-// }
-
-// inline CircularInt operator+=(const int num, const CircularInt &t)
-// {
-//   return t + num;
-// }
-
-// inline CircularInt operator+=(const CircularInt &t1, const CircularInt &t2)
-// {
-//   return t1 + t2.h;
-// }
-
-// inline CircularInt operator-=(const CircularInt &t, const int num)
-// {
-//   CircularInt ans(t);
-//   ans -= num;
-//   return ans;
-// }
-
-// inline CircularInt operator-=(const int num, const CircularInt &t)
-// {
-//   return -(t - num);
-// }
-
-// inline CircularInt operator-=(const CircularInt &t, const CircularInt &t1)
-// {
-//   return t - t1.h;
-// }
 
 inline CircularInt operator*=(const CircularInt &t1, const CircularInt &t2)
 {
