@@ -24,10 +24,10 @@ public:
   friend CircularInt operator-(const CircularInt &p);
   friend CircularInt operator+(const CircularInt &t, const int num);
   friend CircularInt operator+(const int num, const CircularInt &t);
+  friend CircularInt operator+(const CircularInt &t1, const CircularInt &t2);
   friend CircularInt operator-(const CircularInt &t, const int num);
   friend CircularInt operator-(const CircularInt &t, const CircularInt &t1);
   friend CircularInt operator-(const int num, const CircularInt &t);
-  friend CircularInt operator+(const CircularInt &t1, const CircularInt &t2);
   friend CircularInt operator*(const CircularInt &t1, const CircularInt &t2);
   friend CircularInt operator*(const CircularInt &t1, const int num);
   friend CircularInt operator*(const int num, const CircularInt &t1);
@@ -73,30 +73,40 @@ inline CircularInt operator-(const CircularInt &p)
   ans.h = ans.max - ans.h;
   return ans;
 }
-inline CircularInt operator+(const CircularInt &t, const int num)
-{
-  CircularInt ans(t);
-  ans += num;
-  return ans;
-}
-inline CircularInt operator+(const int num, const CircularInt &t)
-{
-  return t + num;
-}
 inline CircularInt operator-(const CircularInt &t, const int num)
 {
   CircularInt ans(t);
   ans -= num;
   return ans;
 }
+
 inline CircularInt operator-(const int num, const CircularInt &t)
 {
   return -(t - num);
 }
+
+inline CircularInt operator-(const CircularInt &t, const CircularInt &t1)
+{
+  return t - t1.h;
+}
+
+inline CircularInt operator+(const CircularInt &t, const int num)
+{
+  CircularInt ans(t);
+  ans += num;
+  return ans;
+}
+
+inline CircularInt operator+(const int num, const CircularInt &t)
+{
+  return t + num;
+}
+
 inline CircularInt operator+(const CircularInt &t1, const CircularInt &t2)
 {
   return t1 + t2.h;
 }
+
 inline CircularInt operator*(const CircularInt &t1, const CircularInt &t2)
 {
   return t1 * t2.h;
@@ -126,11 +136,6 @@ inline CircularInt operator/(const CircularInt &t, const int num)
 inline CircularInt operator/(const int num, const CircularInt &t)
 {
   return t / num;
-}
-
-inline CircularInt operator-(const CircularInt &t, const CircularInt &t1)
-{
-  return t - t1.h;
 }
 
 inline int operator==(const CircularInt &t, const CircularInt &t1)
@@ -264,43 +269,38 @@ input>>t;
   return input;
 }
 
-// static istream& getAndCheckNextCharIs(istream& input, char expectedChar) {
-//     char actualChar;
-//     input >> actualChar;
-//     if (!input) return input;
+inline CircularInt operator+=(const CircularInt &t, const int num)
+{
+  CircularInt ans(t);
+  ans += num;
+  return ans;
+}
 
-//     if (actualChar!=expectedChar)
-//         // failbit is for format error
-//         input.setstate(ios::failbit);
-//     return input;
-// }
+inline CircularInt operator+=(const int num, const CircularInt &t)
+{
+  return t + num;
+}
 
 inline CircularInt operator+=(const CircularInt &t1, const CircularInt &t2)
 {
-  return t1 + t2;
+  return t1 + t2.h;
 }
 
-inline CircularInt operator+=(const CircularInt &t1, const int t)
+inline CircularInt operator-=(const CircularInt &t, const int num)
 {
-  return t1 + t;
-}
-inline CircularInt operator+=(const int t, const CircularInt &t1)
-{
-  return t + t1;
-}
-inline CircularInt operator-=(const CircularInt &t1, const int t)
-{
-  return t1 - t;
+  CircularInt ans(t);
+  ans -= num;
+  return ans;
 }
 
-inline CircularInt operator-=(const int t, const CircularInt &t1)
+inline CircularInt operator-=(const int num, const CircularInt &t)
 {
-  return t - t1;
+  return -(t - num);
 }
 
-inline CircularInt operator-=(const CircularInt &t1, const CircularInt &t2)
+inline CircularInt operator-=(const CircularInt &t, const CircularInt &t1)
 {
-  return t1 - t2;
+  return t - t1.h;
 }
 
 inline CircularInt operator*=(const CircularInt &t1, const CircularInt &t2)
