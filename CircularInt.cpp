@@ -10,11 +10,17 @@ CircularInt &CircularInt::operator++(int)
 {
     return (*this += 1);
 }
+
 CircularInt &CircularInt::operator+=(const int num)
 {
     int t = max - min + 1;
     h = ((h - min) + (num % t)) % t + min;
     return *this;
+}
+
+CircularInt &CircularInt::operator+=(const CircularInt& c)
+{
+    return *this+=c.h;
 }
 
 CircularInt &CircularInt::operator--(int)

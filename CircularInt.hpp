@@ -12,6 +12,7 @@ public:
   CircularInt(const CircularInt &t);
   CircularInt &operator++(int);
   CircularInt &operator+=(const int num);
+  CircularInt& operator+=(const CircularInt& );
   CircularInt &operator--(int);
   CircularInt &operator-=(const int num);
   CircularInt &operator*=(const int num);
