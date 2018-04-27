@@ -36,24 +36,24 @@ public:
   friend CircularInt operator/(const CircularInt &t1, const CircularInt &t2);
   friend CircularInt operator/(const CircularInt &t1, const int num);
   friend CircularInt operator/(const int num, const CircularInt &t1);
-  friend int operator==(const CircularInt &t, const CircularInt &t1);
-  friend int operator==(const int t, const CircularInt &t1);
-  friend int operator==(const CircularInt &t1, const int t);
-  friend int operator!=(const CircularInt &t, const CircularInt &t1);
-  friend int operator!=(const int t, const CircularInt &t1);
-  friend int operator!=(const CircularInt &t1, const int t);
-  friend int operator<(const CircularInt &t, const CircularInt &t1);
-  friend int operator<(const int t, const CircularInt &t1);
-  friend int operator<(const CircularInt &t1, const int t);
-  friend int operator>(const CircularInt &t, const CircularInt &t1);
-  friend int operator>(const int t, const CircularInt &t1);
-  friend int operator>(const CircularInt &t1, const int t);
-  friend int operator>=(const CircularInt &t, const CircularInt &t1);
-  friend int operator>=(const int t, const CircularInt &t1);
-  friend int operator>=(const CircularInt &t1, const int t);
-  friend int operator<=(const CircularInt &t, const CircularInt &t1);
-  friend int operator<=(const int t, const CircularInt &t1);
-  friend int operator<=(const CircularInt &t1, const int t);
+  friend bool operator==(const CircularInt &t, const CircularInt &t1);
+  friend bool operator==(const int t, const CircularInt &t1);
+  friend bool operator==(const CircularInt &t1, const int t);
+  friend bool operator!=(const CircularInt &t, const CircularInt &t1);
+  friend bool operator!=(const int t, const CircularInt &t1);
+  friend bool operator!=(const CircularInt &t1, const int t);
+  friend bool operator<(const CircularInt &t, const CircularInt &t1);
+  friend bool operator<(const int t, const CircularInt &t1);
+  friend bool operator<(const CircularInt &t1, const int t);
+  friend bool operator>(const CircularInt &t, const CircularInt &t1);
+  friend bool operator>(const int t, const CircularInt &t1);
+  friend bool operator>(const CircularInt &t1, const int t);
+  friend bool operator>=(const CircularInt &t, const CircularInt &t1);
+  friend bool operator>=(const int t, const CircularInt &t1);
+  friend bool operator>=(const CircularInt &t1, const int t);
+  friend bool operator<=(const CircularInt &t, const CircularInt &t1);
+  friend bool operator<=(const int t, const CircularInt &t1);
+  friend bool operator<=(const CircularInt &t1, const int t);
   friend CircularInt operator*=(const CircularInt &t1, const CircularInt &t2);
   friend CircularInt operator/=(const CircularInt &t1, const CircularInt &t2);
   CircularInt &operator=(const int);
@@ -134,99 +134,99 @@ inline CircularInt operator/(const int num, const CircularInt &t)
   return t / num;
 }
 
-inline int operator==(const CircularInt &t, const CircularInt &t1)
+inline bool operator==(const CircularInt &t, const CircularInt &t1)
 {
   if (t.h != t1.h)
     return 0;
   return 1;
 }
 
-inline int operator==(const int t, const CircularInt &t1)
+inline bool operator==(const int t, const CircularInt &t1)
 {
   if (t != t1.h)
     return 0;
   return 1;
 }
 
-inline int operator==(const CircularInt &t1, const int t)
+inline bool operator==(const CircularInt &t1, const int t)
 {
   return t == t1;
 }
 
-inline int operator!=(const CircularInt &t, const CircularInt &t1)
+inline bool operator!=(const CircularInt &t, const CircularInt &t1)
 {
   if (t == t1.h)
     return 0;
   return 1;
 }
 
-inline int operator!=(const int t, const CircularInt &t1)
+inline bool operator!=(const int t, const CircularInt &t1)
 {
   if (t == t1.h)
     return 0;
   return 1;
 }
 
-inline int operator!=(const CircularInt &t1, const int t)
+inline bool operator!=(const CircularInt &t1, const int t)
 {
   return t == t1;
 }
 
-inline int operator<(const CircularInt &t, const CircularInt &t1)
+inline bool operator<(const CircularInt &t, const CircularInt &t1)
 {
   return t.h < t1.h;
 }
 
-inline int operator<(const int t, const CircularInt &t1)
+inline bool operator<(const int t, const CircularInt &t1)
 {
   return t < t1.h;
 }
 
-inline int operator<(const CircularInt &t1, const int t)
+inline bool operator<(const CircularInt &t1, const int t)
 {
   return t < t1;
 }
 
-inline int operator>(const CircularInt &t, const CircularInt &t1)
+inline bool operator>(const CircularInt &t, const CircularInt &t1)
 {
   return t1.h > t;
 }
 
-inline int operator>(const int t, const CircularInt &t1)
+inline bool operator>(const int t, const CircularInt &t1)
 {
   return t > t1.h;
 }
 
-inline int operator>(const CircularInt &t1, const int t)
+inline bool operator>(const CircularInt &t1, const int t)
 {
   return t > t1;
 }
-inline int operator>=(const CircularInt &t, const CircularInt &t1)
+inline bool operator>=(const CircularInt &t, const CircularInt &t1)
 {
   return t.h >= t1.h;
 }
 
-inline int operator>=(const int t, const CircularInt &t1)
+inline bool operator>=(const int t, const CircularInt &t1)
 {
   return t >= t1.h;
 }
 
-inline int operator>=(const CircularInt &t1, const int t)
+inline bool operator>=(const CircularInt &t1, const int t)
 {
   return t1.h >= t;
 }
 
-inline int operator<=(const CircularInt &t, const CircularInt &t1)
+inline bool operator<=(const CircularInt &t, const CircularInt &t1)
 {
   return t.h <= t1.h;
 }
 
-inline int operator<=(const int t, const CircularInt &t1)
+inline bool operator<=(const int t, const CircularInt &t1)
 {
   return t <= t1.h;
 }
 
-inline int operator<=(const CircularInt &t1, const int t)
+inline bool operator<=(const CircularInt &t1, const int t)
 {
   return t1.h <= t;
   ;
