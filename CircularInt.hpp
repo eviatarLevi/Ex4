@@ -136,16 +136,12 @@ inline CircularInt operator/(const int num, const CircularInt &t)
 
 inline bool operator==(const CircularInt &t, const CircularInt &t1)
 {
-  if (t.h != t1.h)
-    return 0;
-  return 1;
+  return t1.h==t.h;
 }
 
 inline bool operator==(const int t, const CircularInt &t1)
 {
-  if (t != t1.h)
-    return 0;
-  return 1;
+  return t==t1.h;
 }
 
 inline bool operator==(const CircularInt &t1, const int t)
@@ -155,16 +151,12 @@ inline bool operator==(const CircularInt &t1, const int t)
 
 inline bool operator!=(const CircularInt &t, const CircularInt &t1)
 {
-  if (t == t1.h)
-    return 0;
-  return 1;
+  return t.h!=t1.h;
 }
 
 inline bool operator!=(const int t, const CircularInt &t1)
 {
-  if (t == t1.h)
-    return 0;
-  return 1;
+  return t!=t1.h;
 }
 
 inline bool operator!=(const CircularInt &t1, const int t)
@@ -184,12 +176,12 @@ inline bool operator<(const int t, const CircularInt &t1)
 
 inline bool operator<(const CircularInt &t1, const int t)
 {
-  return t < t1;
+  return t1.h<t;
 }
 
 inline bool operator>(const CircularInt &t, const CircularInt &t1)
 {
-  return t1.h > t;
+  return t.h > t1.h;
 }
 
 inline bool operator>(const int t, const CircularInt &t1)
@@ -199,7 +191,7 @@ inline bool operator>(const int t, const CircularInt &t1)
 
 inline bool operator>(const CircularInt &t1, const int t)
 {
-  return t > t1;
+  return t1.h > t;
 }
 inline bool operator>=(const CircularInt &t, const CircularInt &t1)
 {
