@@ -18,9 +18,9 @@ CircularInt &CircularInt::operator+=(const int num)
     return *this;
 }
 
-CircularInt &CircularInt::operator+=(const CircularInt& c)
+CircularInt &CircularInt::operator+=(const CircularInt &c)
 {
-    return *this+=c.h;
+    return *this += c.h;
 }
 
 CircularInt &CircularInt::operator--(int)
@@ -35,9 +35,9 @@ CircularInt &CircularInt::operator-=(const int num)
     return *this;
 }
 
-CircularInt &CircularInt::operator-=(const CircularInt& c)
+CircularInt &CircularInt::operator-=(const CircularInt &c)
 {
-    return *this-=c.h;
+    return *this -= c.h;
 }
 
 CircularInt &CircularInt::operator*=(const int num)
@@ -68,10 +68,12 @@ CircularInt &CircularInt::operator/=(const int num)
 
 CircularInt &CircularInt::operator=(const int num)
 {
-    if(num>=this->min&&num<=this->max){
-    this->h = num;
-    return *this;}
-    string er="Error";
+    if (num >= this->min && num <= this->max)
+    {
+        this->h = num;
+        return *this;
+    }
+    string er = "Error";
     throw er;
 }
 int CircularInt::getmin()
@@ -82,6 +84,7 @@ int CircularInt::getmax()
 {
     return max;
 }
-void CircularInt::setH(int num){
-    this->h=num;
+void CircularInt::setH(int num)
+{
+    this->h = num;
 }

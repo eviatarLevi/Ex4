@@ -7,15 +7,16 @@ class CircularInt
 private:
   int min, max;
   int h;
+
 public:
   CircularInt(int minVal, int maxVal);
   CircularInt(const CircularInt &t);
   CircularInt &operator++(int);
   CircularInt &operator+=(const int num);
-  CircularInt& operator+=(const CircularInt& );
+  CircularInt &operator+=(const CircularInt &);
   CircularInt &operator--(int);
   CircularInt &operator-=(const int num);
-  CircularInt& operator-=(const CircularInt& );
+  CircularInt &operator-=(const CircularInt &);
   CircularInt &operator*=(const int num);
   CircularInt &operator/=(const int num);
   int getmin();
@@ -136,12 +137,12 @@ inline CircularInt operator/(const int num, const CircularInt &t)
 
 inline bool operator==(const CircularInt &t, const CircularInt &t1)
 {
-  return t1.h==t.h;
+  return t1.h == t.h;
 }
 
 inline bool operator==(const int t, const CircularInt &t1)
 {
-  return t==t1.h;
+  return t == t1.h;
 }
 
 inline bool operator==(const CircularInt &t1, const int t)
@@ -151,12 +152,12 @@ inline bool operator==(const CircularInt &t1, const int t)
 
 inline bool operator!=(const CircularInt &t, const CircularInt &t1)
 {
-  return t.h!=t1.h;
+  return t.h != t1.h;
 }
 
 inline bool operator!=(const int t, const CircularInt &t1)
 {
-  return t!=t1.h;
+  return t != t1.h;
 }
 
 inline bool operator!=(const CircularInt &t1, const int t)
@@ -176,7 +177,7 @@ inline bool operator<(const int t, const CircularInt &t1)
 
 inline bool operator<(const CircularInt &t1, const int t)
 {
-  return t1.h<t;
+  return t1.h < t;
 }
 
 inline bool operator>(const CircularInt &t, const CircularInt &t1)
@@ -227,31 +228,31 @@ inline bool operator<=(const CircularInt &t1, const int t)
 inline istream &operator>>(istream &input, CircularInt &c)
 {
   ios::pos_type startPosition = input.tellg();
- int t;
-input>>t;
+  int t;
+  input >> t;
   if (t > c.getmin() && t < c.getmax())
   {
-    c.setH( t);
+    c.setH(t);
   }
   else
   {
     int p = c.getmax() - c.getmin() + 1;
     if (t > c.getmax())
     {
-      
+
       while (t > c.getmax())
         t = t - p;
-      c.setH (t);
+      c.setH(t);
     }
     else
     {
       if (t < c.getmin())
       {
-        
+
         while (t < c.getmin())
           t = t + p;
       }
-      c.setH (t);
+      c.setH(t);
     }
   }
   return input;
