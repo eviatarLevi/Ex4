@@ -71,3 +71,6 @@ int CircularInt::getmax()
 {
     return max;
 }
+void CircularInt::setH(int num){
+    this->h=num;
+}
