@@ -146,7 +146,7 @@ inline bool operator==(const int t, const CircularInt &t1)
 
 inline bool operator==(const CircularInt &t1, const int t)
 {
-  return t == t1;
+  return t1.h == t;
 }
 
 inline bool operator!=(const CircularInt &t, const CircularInt &t1)
@@ -161,7 +161,7 @@ inline bool operator!=(const int t, const CircularInt &t1)
 
 inline bool operator!=(const CircularInt &t1, const int t)
 {
-  return t == t1;
+  return t != t1;
 }
 
 inline bool operator<(const CircularInt &t, const CircularInt &t1)
